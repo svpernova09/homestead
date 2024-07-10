@@ -2,40 +2,10 @@
 
 # Clear The Old Environment Variables
 
+version_array=(5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1 8.2)
+
 sed -i '/# Set Homestead Environment Variable/,+1d' /home/vagrant/.profile
 
-if [ -f /etc/php/5.6/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/5.6/fpm/pool.d/www.conf
-fi
-
-if [ -f /etc/php/7.0/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/7.0/fpm/pool.d/www.conf
-fi
-
-if [ -f /etc/php/7.1/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/7.1/fpm/pool.d/www.conf
-fi
-
-if [ -f /etc/php/7.2/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/7.2/fpm/pool.d/www.conf
-fi
-
-if [ -f /etc/php/7.3/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/7.3/fpm/pool.d/www.conf
-fi
-
-if [ -f /etc/php/7.4/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/7.4/fpm/pool.d/www.conf
-fi
-
-if [ -f /etc/php/8.0/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/8.0/fpm/pool.d/www.conf
-fi
-
-if [ -f /etc/php/8.1/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/8.1/fpm/pool.d/www.conf
-fi
-
-if [ -f /etc/php/8.2/fpm/pool.d/www.conf ]; then
-    sed -i '/env\[.*/,+1d' /etc/php/8.2/fpm/pool.d/www.conf
-fi
+for version in ${versions}; do
+	[[ -f /etc/php/$version/fpm/pool.d/www.conf ]] && sed -i '/env\[.*/,+1d' /etc/php/$version/fpm/pool.d/www.conf
+done
