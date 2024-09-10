@@ -10,9 +10,9 @@ if(is_file( __DIR__.'/../vendor/autoload.php')) {
 
 $app = new Symfony\Component\Console\Application('Svpernova09 Homestead', '15.1.0');
 
-$app->add(new Laravel\Homestead\MakeCommand);
-$app->add(new Laravel\Homestead\WslApplyFeatures);
-$app->add(new Laravel\Homestead\WslCreateSiteCommand);
-$app->add(new Laravel\Homestead\WslCreateDatabaseCommand());
+$app->add(new Svpernova\Homestead\MakeCommand);
+$app->add(new Svpernova\Homestead\WslApplyFeatures);
+$app->add(new Svpernova\Homestead\WslCreateSiteCommand);
+$app->add(new Svpernova\Homestead\WslCreateDatabaseCommand());
 
 $app->run();
