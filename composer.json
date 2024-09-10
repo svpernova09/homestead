@@ -1,8 +1,8 @@
 {
-    "name": "laravel/homestead",
-    "description": "A virtual machine for web artisans.",
+    "name": "svpernova09/homestead",
+    "description": "A fork of laravel/homestead.",
     "require": {
-        "php": "^8.1 || <8.3",
+        "php": "^8.1 || <8.4",
         "symfony/console": "^6.0 || ^7.0",
         "symfony/process": "^6.0 || ^7.0",
         "symfony/yaml": "^6.0 || ^7.0"
@@ -15,17 +15,13 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Taylor Otwell",
-            "email": "taylor@laravel.com"
-        },
-        {
             "name": "Joe Ferguson",
             "email": "joe@joeferguson.me"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Laravel\\Homestead\\": "src/"
+            "Svpernova\\Homestead\\": "src/"
         }
     },
     "autoload-dev": {

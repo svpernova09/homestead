@@ -1,11 +1,10 @@
 <?php
 
 namespace Tests;
-
 use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
-use Laravel\Homestead\MakeCommand;
-use Laravel\Homestead\Traits\GeneratesSlugs;
 use PHPUnit\Framework\TestCase;
+use Svpernova\Homestead\MakeCommand;
+use Svpernova\Homestead\Traits\GeneratesSlugs;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Yaml\Yaml;
 use Tests\Traits\GeneratesTestDirectory;

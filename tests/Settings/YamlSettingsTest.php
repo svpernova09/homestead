@@ -3,7 +3,7 @@
 namespace Tests\Settings;
 
 use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
-use Laravel\Homestead\Settings\YamlSettings;
+use Svpernova\Homestead\Settings\YamlSettings;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
 use Tests\Traits\GeneratesTestDirectory;
