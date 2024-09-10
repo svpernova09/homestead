@@ -1,5 +1,5 @@
 {
-    "name": "svpernova/homestead",
+    "name": "svpernova09/homestead",
     "description": "A fork of laravel/homestead.",
     "require": {
         "php": "^8.1 || <8.4",
