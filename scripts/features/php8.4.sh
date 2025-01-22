@@ -18,13 +18,13 @@ then
   service php8.4-fpm restart
 fi
 
-if [ -f /home/$WSL_USER_NAME/.homestead-features/php83 ]
+if [ -f /home/$WSL_USER_NAME/.homestead-features/php84 ]
 then
     echo "PHP 8.4 already installed."
     exit 0
 fi
 
-touch /home/$WSL_USER_NAME/.homestead-features/php83
+touch /home/$WSL_USER_NAME/.homestead-features/php84
 chown -Rf $WSL_USER_NAME:$WSL_USER_GROUP /home/$WSL_USER_NAME/.homestead-features
 
 # PHP 8.4
