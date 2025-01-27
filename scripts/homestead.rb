@@ -16,7 +16,7 @@ class Homestead
     end
 
     # Configure The Box
-    config.vm.define settings['name'] ||= 'homestead'
+    config.vm.define settings['name'] ||= 'svpernova09-homestead'
     config.vm.box = settings['box'] ||= 'Svpernova09/homestead'
     unless settings.has_key?('SpeakFriendAndEnter')
       config.vm.box_version = settings['version'] ||= '>= 14.0.3, < 15.0.0'
