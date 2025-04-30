@@ -153,10 +153,6 @@ usermod -a -G www-data $WSL_USER_NAME
 id $WSL_USER_NAME
 groups $WSL_USER_GROUP
 
-# Install Node
-apt-get install -y nodejs
-/usr/bin/npm install -g npm
-
 # Install SQLite
 apt-get install -y sqlite3 libsqlite3-dev
 
