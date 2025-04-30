@@ -107,10 +107,6 @@ apt-get update -y
 apt-get install -y build-essential dos2unix gcc git git-lfs libmcrypt4 libpcre3-dev libpng-dev chrony unzip make pv \
 python3-pip re2c supervisor unattended-upgrades whois vim cifs-utils bash-completion zsh graphviz avahi-daemon tshark
 
-# Install Generic PHP packages
-apt-get install -y --allow-change-held-packages \
-php-imagick php-memcached php-redis php-xdebug php-dev php-swoole
-
 # PHP 8.3
 bash 'scripts/features/php8.3.sh'
 
