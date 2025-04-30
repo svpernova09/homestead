@@ -96,7 +96,7 @@ cd ~/Homestead
 ### Provision Homestead on WSL Distro
 ```
 cd ~/Homestead
-sudo ./bin/wsl-init
+sudo bin/wsl-init
 ```
 This will prompt you for the WSL username and the user's group name. Provide the username that you selected at the time of distro installation, and provide the user's group name (generally the same as the username).
 
@@ -110,7 +110,7 @@ Refer Laravel Homestead official documentation to get more information about [In
 
 ```bash
 cd ~/Homestead
-sudo ./bin/homestead wsl:features
+sudo php bin/homestead wsl:features
 ```
 
 ### Installing Databases
@@ -128,7 +128,7 @@ After adding the databases, run the following command to create them in the inst
 
 ```bash
 cd ~/Homestead
-sudo ./bin/homestead wsl:databases
+sudo php bin/homestead wsl:databases
 ```
 
 ### Configuring Nginx Sites
@@ -144,7 +144,7 @@ Now, run the following command to configure these websites in Nginx on WSL. You 
 For more information about [Configuring Nginx Sites](https://laravel.com/docs/master/homestead#configuring-nginx-sites), refer to the Laravel Homestead official documentation.
 ```
 cd ~/Homestead
-sudo ./bin/homestead wsl:sites
+sudo php bin/homestead wsl:sites
 ```
 
 > Please be aware that executing the aforementioned command will result in the removal of all existing Nginx configurations. Any manual adjustments made to the configurations will be removed.

@@ -73,8 +73,7 @@ class WslApplyFeatures extends Command
         $format = $input->getOption('json') ? 'json' : 'yaml';
         $settings = $this->parseSettingsFromFile($format, []);
 
-        foreach ($settings['features'] as $key => $feature) {
-            $feature_cmd = '';
+        foreach ($settings['features'] as $feature) {
             $feature_name = array_key_first($feature);
             $feature_variables = $feature[$feature_name];
             $output->writeln(PHP_EOL.($feature[$feature_name] ? '' : 'Not ').'Configuring feature: '.$feature_name);           
