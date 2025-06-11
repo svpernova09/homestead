@@ -19,7 +19,7 @@ class Homestead
     config.vm.define settings['name'] ||= 'homestead'
     config.vm.box = settings['box'] ||= 'Svpernova09/homestead'
     unless settings.has_key?('SpeakFriendAndEnter')
-      config.vm.box_version = settings['version'] ||= '>= 16.0.1, < 17.0.0'
+      config.vm.box_version = settings['version'] ||= '>= 16.0.0, < 17.0.0'
     end
     config.vm.hostname = settings['hostname'] ||= 'homestead'
 
