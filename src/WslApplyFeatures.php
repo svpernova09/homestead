@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Homestead;
+namespace Svpernova\Homestead;
 
-use Laravel\Homestead\Settings\JsonSettings;
-use Laravel\Homestead\Settings\YamlSettings;
-use Laravel\Homestead\Traits\GeneratesSlugs;
+use Svpernova\Homestead\Settings\JsonSettings;
+use Svpernova\Homestead\Settings\YamlSettings;
+use Svpernova\Homestead\Traits\GeneratesSlugs;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -47,7 +47,7 @@ class WslApplyFeatures extends Command
      *
      * @return void
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this->basePath = getcwd();
         $this->projectName = basename($this->basePath);
@@ -67,14 +67,13 @@ class WslApplyFeatures extends Command
      * @param  OutputInterface  $output
      * @return int
      */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         // Grab the current settings or create an example configuration
         $format = $input->getOption('json') ? 'json' : 'yaml';
         $settings = $this->parseSettingsFromFile($format, []);
 
-        foreach ($settings['features'] as $key => $feature) {
-            $feature_cmd = '';
+        foreach ($settings['features'] as $feature) {
             $feature_name = array_key_first($feature);
             $feature_variables = $feature[$feature_name];
             $output->writeln(PHP_EOL.($feature[$feature_name] ? '' : 'Not ').'Configuring feature: '.$feature_name);           

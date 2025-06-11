@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Homestead;
+namespace Svpernova\Homestead;
 
-use Laravel\Homestead\Settings\JsonSettings;
-use Laravel\Homestead\Settings\YamlSettings;
-use Laravel\Homestead\Traits\GeneratesSlugs;
+use Svpernova\Homestead\Settings\JsonSettings;
+use Svpernova\Homestead\Settings\YamlSettings;
+use Svpernova\Homestead\Traits\GeneratesSlugs;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -40,7 +40,7 @@ class MakeCommand extends Command
      *
      * @return void
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this->basePath = getcwd();
         $this->projectName = basename($this->basePath);
@@ -65,7 +65,7 @@ class MakeCommand extends Command
      * @param  \Symfony\Component\Console\Output\OutputInterface  $output
      * @return int
      */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         if (! $this->vagrantfileExists()) {
             $this->createVagrantfile();
@@ -107,7 +107,7 @@ class MakeCommand extends Command
      */
     protected function isPerProjectInstallation()
     {
-        return (bool) preg_match('/vendor\/laravel\/homestead/', __DIR__);
+        return (bool) preg_match('/vendor\/svpernova09\/homestead/', __DIR__);
     }
 
     /**

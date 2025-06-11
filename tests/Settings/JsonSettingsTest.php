@@ -3,7 +3,7 @@
 namespace Tests\Settings;
 
 use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
-use Laravel\Homestead\Settings\JsonSettings;
+use Svpernova\Homestead\Settings\JsonSettings;
 use PHPUnit\Framework\TestCase;
 use Tests\Traits\GeneratesTestDirectory;
 

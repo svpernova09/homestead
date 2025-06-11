@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ##################################
 # Usage:                         #
-# sudo ./bin/homestead/wsl-init  #
+# sudo ./bin/wsl-init  #
 ##################################
 export DEBIAN_FRONTEND=noninteractive
 
@@ -102,10 +102,6 @@ apt-get update -y
 apt-get install -y build-essential dos2unix gcc git git-lfs libmcrypt4 libpcre3-dev libpng-dev chrony unzip make pv \
 python3-pip re2c supervisor unattended-upgrades whois vim cifs-utils bash-completion zsh graphviz avahi-daemon tshark
 
-# Install Generic PHP packages
-apt-get install -y --allow-change-held-packages \
-php-imagick php-memcached php-redis php-xdebug php-dev php-swoole
-
 # PHP 8.3
 bash 'scripts/features/php8.3.sh'
 
@@ -147,10 +143,6 @@ service nginx restart
 usermod -a -G www-data $WSL_USER_NAME
 id $WSL_USER_NAME
 groups $WSL_USER_GROUP
-
-# Install Node
-apt-get install -y nodejs
-/usr/bin/npm install -g npm
 
 # Install SQLite
 apt-get install -y sqlite3 libsqlite3-dev
