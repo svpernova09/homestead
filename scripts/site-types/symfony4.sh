@@ -45,10 +45,6 @@ block="server {
 
     index index.html index.htm index.php;
 
-    types {
-        application/javascript mjs;
-    }
-
     charset utf-8;
     client_max_body_size 100M;
 
