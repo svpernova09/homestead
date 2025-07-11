@@ -1,0 +1,82 @@
+name: Bug report
+description: File a bug report for Homestead
+title: "[Bug] "
+labels: [bug]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please note that the Homestead issue tracker is reserved for bug reports and enhancements. We are not always able to debug Vagrant, Provider or Operating System issues, but will do our best to help. Thank you!
+  - type: input
+    id: vagrant_version
+    attributes:
+      label: Vagrant version
+      description: Run `vagrant -v` to show the version.
+      placeholder: "2.3.7"
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Provider and version
+      description: Virtualbox, VMWare, Hyper-V, or Parallels and its version.
+      placeholder: "Virtualbox 6.1.38"
+    validations:
+      required: true
+  - type: input
+    id: homestead_version
+    attributes:
+      label: Homestead version
+      description: You should be on the most recent `release` branch.
+      placeholder: "13.2.0"
+    validations:
+      required: true
+  - type: input
+    id: host_os
+    attributes:
+      label: Host operating system
+      description: This is the operating system that you run locally.
+      placeholder: "Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: homestead_yaml
+    attributes:
+      label: Homestead.yaml
+      description: Copy-paste your Homestead.yaml here
+      render: yaml
+  - type: input
+    id: gist_link
+    attributes:
+      label: Vagrant destroy & up output (Gist link)
+      description: Provide a link to a GitHub Gist containing the output of `vagrant destroy && vagrant up`.
+      placeholder: "https://gist.github.com/yourgist"
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+      description: What should have happened? Please include as much detail as possible.
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual behavior
+      description: What actually happened? Please include as much detail as possible.
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to reproduce
+      description: List the steps to reproduce the issue.
+      value: |
+        1.
+        2.
+        3.
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Link any related GitHub issues.
+      value: |
+        - GH-1234
