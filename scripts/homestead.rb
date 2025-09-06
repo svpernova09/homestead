@@ -19,7 +19,7 @@ class Homestead
     config.vm.define settings['name'] ||= 'homestead'
     config.vm.box = settings['box'] ||= 'Svpernova09/homestead'
     unless settings.has_key?('SpeakFriendAndEnter')
-      config.vm.box_version = settings['version'] ||= '>= 14.0.3, < 15.0.0'
+      config.vm.box_version = settings['version'] ||= '>= 16.0.0, < 17.0.0'
     end
     config.vm.hostname = settings['hostname'] ||= 'homestead'
 
@@ -416,7 +416,7 @@ class Homestead
               site['to'],                 # $2
               site['port'] ||= http_port, # $3
               site['ssl'] ||= https_port, # $4
-              site['php'] ||= '8.3',      # $5
+              site['php'] ||= '8.4',      # $5
               params ||= '',              # $6
               site['xhgui'] ||= '',       # $7
               site['exec'] ||= 'false',   # $8
@@ -678,7 +678,7 @@ class Homestead
     # Update Composer On Every Provision
     config.vm.provision 'shell' do |s|
       s.name = 'Update Composer'
-      s.inline = 'sudo chown -R vagrant:vagrant /usr/local/bin && sudo -u vagrant /usr/bin/php8.3 /usr/local/bin/composer self-update --no-progress && sudo chown -R vagrant:vagrant /home/vagrant/.config/'
+      s.inline = 'sudo chown -R vagrant:vagrant /usr/local/bin && sudo -u vagrant /usr/bin/php8.4 /usr/local/bin/composer self-update --no-progress && sudo chown -R vagrant:vagrant /home/vagrant/.config/'
       s.privileged = false
     end
 
