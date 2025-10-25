@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Homestead;
+namespace Svpernova\Homestead;
 
-use Laravel\Homestead\Settings\JsonSettings;
-use Laravel\Homestead\Settings\YamlSettings;
+use Svpernova\Homestead\Settings\JsonSettings;
+use Svpernova\Homestead\Settings\YamlSettings;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
