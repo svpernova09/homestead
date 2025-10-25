@@ -13,10 +13,8 @@ class WslApplyFolderMapping extends Command
 {
     /**
      * Configure the command options.
-     *
-     * @return void
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('wsl:folders')
@@ -26,12 +24,8 @@ class WslApplyFolderMapping extends Command
 
     /**
      * Execute the command.
-     *
-     * @param  InputInterface  $input
-     * @param  OutputInterface  $output
-     * @return int
      */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         // Grab the current settings or create an example configuration
         $format = $input->getOption('json') ? 'json' : 'yaml';
@@ -52,12 +46,7 @@ class WslApplyFolderMapping extends Command
         return 0;
     }
 
-    /**
-     * @param  string  $format
-     * @param  array  $options
-     * @return mixed
-     */
-    protected function parseSettingsFromFile(string $format, array $options)
+    protected function parseSettingsFromFile(string $format, array $options): mixed
     {
         $SettingsClass = ($format === 'json') ? JsonSettings::class : YamlSettings::class;
         $filename = __DIR__."/../Homestead.{$format}";
