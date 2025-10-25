@@ -27,7 +27,7 @@ Welcome to the _"Initial Draft"_ documentation for using Homestead to provision 
 
 ## Requirements
 
-**WSL Version**: WSL2
+**WSL Version**: 2
 
 Homestead for WSL is currently tested only with WSL version 2 (WSL2), though it can also work with WSL version 1.
 
@@ -66,6 +66,10 @@ To install a distribution, use the following command:
 > wsl --install Ubuntu-22.04
 ```
 
+or install via the Microsoft Store:
+- [Ubuntu 20.04 LTS](https://apps.microsoft.com/detail/9n6svws3rx71)
+- [Ubuntu 22.04 LTS](https://apps.microsoft.com/detail/9pn20msr04dw)
+
 After finishing up the download and/or installation of the distro, it will ask for username and password.
 Can give any username but recommend using __vagrant__ (_vagrant_ is default user created while using Homestead with other Providers)
 
@@ -92,7 +96,7 @@ cd ~/Homestead
 ### Provision Homestead on WSL Distro
 ```
 cd ~/Homestead
-sudo ./bin/wsl-init
+sudo bin/wsl-init
 ```
 This will prompt you for the WSL username and the user's group name. Provide the username that you selected at the time of distro installation, and provide the user's group name (generally the same as the username).
 
@@ -106,7 +110,7 @@ Refer Laravel Homestead official documentation to get more information about [In
 
 ```bash
 cd ~/Homestead
-sudo ./bin/homestead wsl:features
+sudo php bin/homestead wsl:features
 ```
 
 ### Installing Databases
@@ -124,7 +128,7 @@ After adding the databases, run the following command to create them in the inst
 
 ```bash
 cd ~/Homestead
-sudo ./bin/homestead wsl:databases
+sudo php bin/homestead wsl:databases
 ```
 
 ### Configuring Nginx Sites
@@ -140,7 +144,7 @@ Now, run the following command to configure these websites in Nginx on WSL. You 
 For more information about [Configuring Nginx Sites](https://laravel.com/docs/master/homestead#configuring-nginx-sites), refer to the Laravel Homestead official documentation.
 ```
 cd ~/Homestead
-sudo ./bin/homestead wsl:sites
+sudo php bin/homestead wsl:sites
 ```
 
 > Please be aware that executing the aforementioned command will result in the removal of all existing Nginx configurations. Any manual adjustments made to the configurations will be removed.
@@ -209,16 +213,16 @@ Following softwares are not installed in WSL by default unlike Homestead Vagrant
 - PHP 7.0
 - PHP 5.6
 - PostgreSQL 15
-- Beanstalkd *
-- Docker *
-- Mailpit *
-- ngrok *
-- XHProf / Tideways / XHGui *
-- wp-cli *
-- lmm *
-- Apache *
+- Beanstalkd [^1]
+- Docker [^1]
+- Mailpit [^1]
+- ngrok [^1]
+- XHProf / Tideways / XHGui [^1]
+- wp-cli [^1]
+- lmm [^1]
+- Apache [^1]
 
-* - (Not available as optional feature, need to install manually)
+[^1]: Not available as optional feature, need to install manually
 
 ### Optional Software
 The following software features can be installed as optional features using the wsl:features command after updating the Homestead.yaml file:

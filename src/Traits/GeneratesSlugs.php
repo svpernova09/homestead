@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Homestead\Traits;
+namespace Svpernova\Homestead\Traits;
 
 trait GeneratesSlugs
 {
