@@ -126,6 +126,12 @@ function php84() {
     sudo update-alternatives --set phpize /usr/bin/phpize8.4
 }
 
+function php85() {
+    sudo update-alternatives --set php /usr/bin/php8.5
+    sudo update-alternatives --set php-config /usr/bin/php-config8.5
+    sudo update-alternatives --set phpize /usr/bin/phpize8.5
+}
+
 function serve-apache() {
     if [[ "$1" && "$2" ]]
     then

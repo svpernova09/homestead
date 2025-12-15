@@ -60,4 +60,5 @@ service php8.1-fpm restart
 service php8.2-fpm restart
 service php8.3-fpm restart
 service php8.4-fpm restart
+service php8.5-fpm restart
 service blackfire-agent restart
